@@ -17,3 +17,21 @@ var containsDuplicate = function(nums) {
     }
     return false
 };
+
+// refactored using a hash set
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    let hashSet = new Set()
+
+    for(let i = 0; i < nums.length; i+=1){
+        let number = nums[i];
+        if(hashSet.has(number)){
+            return true;
+        }
+        hashSet.add(number)
+    }
+    return false
+};
